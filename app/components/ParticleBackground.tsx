@@ -1,15 +1,17 @@
+
 'use client';
 
 import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { type Container, type ISourceOptions } from "@tsparticles/engine";
+import { loadFull } from "tsparticles"; // Import the full bundle
 
 const ParticleBackground = () => {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      await engine.load("basic");
+      await loadFull(engine); // Load the full bundle
     }).then(() => {
       setInit(true);
     });
