@@ -21,11 +21,6 @@ const ParticleBackground = () => {
 
   const options: ISourceOptions = useMemo(
     () => ({
-      background: {
-        color: {
-          value: "#000000",
-        },
-      },
       fpsLimit: 60,
       interactivity: {
         events: {
@@ -49,7 +44,7 @@ const ParticleBackground = () => {
           color: "#ffffff",
           distance: 150,
           enable: true,
-          opacity: 0.1,
+          opacity: 0.2,
           width: 1,
         },
         move: {
@@ -69,7 +64,7 @@ const ParticleBackground = () => {
           value: 100,
         },
         opacity: {
-          value: 0.1,
+          value: 0.5,
         },
         shape: {
           type: "circle",
