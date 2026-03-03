@@ -1,10 +1,11 @@
+
 'use client';
 
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Briefcase, GraduationCap, TrendingUp, Zap, Shield, Flame, Wind, BookOpen, BrainCircuit, Target, Award, Linkedin, Github, Code, Menu, X, ChevronRight, Code2 } from "lucide-react";
 import Link from 'next/link';
-
+import Image from 'next/image';
 
 const aboutSections = [
   {
@@ -74,10 +75,31 @@ const aboutSections = [
 ];
 
 const techStack = {
-  Languages: ["Java", "Kotlin", "Python", "JS/TS"],
-  Frameworks: ["React", "Next.js", "Django", "Jetpack Compose"],
-  Databases: ["PostgreSQL", "MySQL", "MongoDB", "Firebase"],
-  "DevOps/Cloud": ["Docker", "K8s", "AWS", "GCP", "Vercel"],
+  Languages: [
+    { name: "Java", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+    { name: "Kotlin", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" },
+    { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+    { name: "JS/TS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+  ],
+  Frameworks: [
+    { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+    { name: "Next.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+    { name: "Django", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
+    { name: "Jetpack Compose", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jetpackcompose/jetpackcompose-original.svg" },
+  ],
+  Databases: [
+    { name: "PostgreSQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+    { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+    { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+    { name: "Firebase", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
+  ],
+  "DevOps/Cloud": [
+    { name: "Docker", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+    { name: "Kubernetes", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" },
+    { name: "AWS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" },
+    { name: "GCP", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" },
+    { name: "Vercel", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" },
+  ],
 };
 
 export default function AboutPage() {
@@ -207,28 +229,27 @@ export default function AboutPage() {
         </section>
 
         <section id="tech-stack" className="mt-24">
-            <h2 className="text-4xl font-black tracking-tighter text-center mb-12">My Tech Arsenal</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {Object.entries(techStack).map(([category, technologies], index) =>(
-                    <motion.div
-                    key={category}
-                    initial={{ opacity: 0, y: 40 }}
+          <h2 className="text-4xl font-black tracking-tighter text-center mb-12">My Tech Arsenal</h2>
+          {Object.entries(techStack).map(([category, technologies]) => (
+            <div key={category} className="mb-12">
+              <h3 className="text-2xl font-bold text-amber-500 mb-6 text-center">{category}</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                {technologies.map((tech, index) => (
+                  <motion.div
+                    key={tech.name}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: index * 0.2 }}
-                    className="glass-effect rounded-2xl p-6"
-                    >
-                        <h3 className="text-xl font-bold text-amber-500 mb-4">{category}</h3>
-                        <div className="flex flex-wrap gap-2">
-                            {technologies.map(tech => (
-                                <span key={tech} className="px-3 py-1 bg-red-950/30 border border-red-900/30 text-amber-200/70 text-xs font-semibold rounded-lg">
-                                    {tech}
-                                </span>
-                            ))}
-                        </div>
-                    </motion.div>
+                    transition={{ delay: index * 0.1 }}
+                    className="glass-effect rounded-lg p-4 flex flex-col items-center justify-center text-center"
+                  >
+                    <Image src={tech.logo} alt={tech.name} width={48} height={48} className="w-12 h-12 mb-4 filter grayscale group-hover:filter-none transition-all duration-300" />
+                    <span className="text-sm font-semibold text-amber-200/70">{tech.name}</span>
+                  </motion.div>
                 ))}
+              </div>
             </div>
+          ))}
         </section>
 
       </main>
