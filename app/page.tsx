@@ -16,9 +16,9 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#080000] text-white selection:bg-red-500/30 overflow-x-hidden">
+    <div className="min-h-screen bg-transparent text-white selection:bg-red-500/30 overflow-x-hidden">
       {/* Top Bar / Navigation */}
-      <nav className="fixed top-0 w-full z-50 backdrop-blur-xl border-b border-red-900/20 bg-black/40">
+      <nav className="fixed top-0 w-full z-50 glass-effect">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -88,7 +88,7 @@ export default function Home() {
       </nav>
 
       <main className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pt-32 sm:pt-40 flex items-center justify-center text-center min-h-screen">
-        <header className="relative">
+        <header className="relative glass-effect p-8 rounded-3xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -130,9 +130,6 @@ export default function Home() {
             </Link>
           </motion.div>
 
-          {/* Background Glows */}
-          <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-red-900/20 rounded-full blur-[150px] -z-10 animate-pulse" />
-          <div className="absolute top-0 right-0 w-80 h-80 bg-amber-600/10 rounded-full blur-[120px] -z-10" />
         </header>
       </main>
 

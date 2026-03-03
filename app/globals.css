@@ -37,6 +37,21 @@ body {
     -webkit-text-fill-color: transparent;
     animation: text-shine 3s linear infinite;
   }
+
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.3s, backdrop-filter 0.3s, border 0.3s, transform 0.3s;
+    transform: scale(1);
+  }
+
+  .glass-effect:hover {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
+  }
 }
 
 @keyframes border-glow {

@@ -88,9 +88,9 @@ export default function AboutPage() {
         { name: "Contact", href: "#contact" },
     ];
   return (
-    <div className="min-h-screen bg-[#080000] text-white selection:bg-red-500/30 overflow-x-hidden">
+    <div className="min-h-screen bg-transparent text-white selection:bg-red-500/30 overflow-x-hidden">
       {/* Top Bar / Navigation */}
-      <nav className="fixed top-0 w-full z-50 backdrop-blur-xl border-b border-red-900/20 bg-black/40">
+      <nav className="fixed top-0 w-full z-50 glass-effect">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -154,7 +154,7 @@ export default function AboutPage() {
       </nav>
 
       <main className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pt-32 sm:pt-40">
-      <header className="mb-20 relative text-center md:text-left">
+      <header className="mb-20 relative text-center md:text-left glass-effect p-8 rounded-3xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -171,8 +171,6 @@ export default function AboutPage() {
                 A passionate and creative Full Stack Developer based in India, currently working at Little Apps, Inc. I am a B.Tech CSE student at IIT Madras with a journey that reflects my dedication and growth in the tech industry.
             </p>
           </motion.div>
-          <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-red-900/20 rounded-full blur-[150px] -z-10 animate-pulse" />
-          <div className="absolute top-0 right-0 w-80 h-80 bg-amber-600/10 rounded-full blur-[120px] -z-10" />
         </header>
 
         <section id="about-details" className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -183,11 +181,11 @@ export default function AboutPage() {
                  whileInView={{ opacity: 1, y: 0 }}
                  viewport={{ once: true }}
                  transition={{ delay: index * 0.15 }}
-                 className="group relative"
+                 className="group relative glass-effect rounded-[2rem]"
                >
                  <div className={`absolute -inset-[2px] rounded-[2rem] bg-gradient-to-r ${section.gradient} opacity-10 group-hover:opacity-100 transition-all duration-700 blur-[1px] group-hover:blur-[8px]`} />
                  
-                 <div className="relative h-full bg-[#0F0000] border border-red-900/20 rounded-[2rem] overflow-hidden p-8 sm:p-10 flex flex-col shadow-2xl">
+                 <div className="relative h-full bg-transparent p-8 sm:p-10 flex flex-col">
                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${section.gradient} flex items-center justify-center mb-8 shadow-xl shadow-red-950/50 group-hover:scale-110 transition-transform duration-500`}>
                      {section.icon}
                    </div>
@@ -218,7 +216,7 @@ export default function AboutPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.2 }}
-                    className="bg-[#0F0000] border border-red-900/20 rounded-2xl p-6"
+                    className="glass-effect rounded-2xl p-6"
                     >
                         <h3 className="text-xl font-bold text-amber-500 mb-4">{category}</h3>
                         <div className="flex flex-wrap gap-2">
@@ -235,7 +233,7 @@ export default function AboutPage() {
 
       </main>
 
-      <footer id="contact" className="mt-40 py-20 border-t border-red-900/10 bg-black/40">
+      <footer id="contact" className="mt-40 py-20 glass-effect">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-4xl sm:text-6xl font-black mb-8 tracking-tighter">Let's Connect</h2>
           <div className="flex justify-center gap-8 mb-12">

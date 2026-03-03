@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import ParticleBackground from "./components/ParticleBackground";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,9 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-slate-200`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="fixed inset-0 z-[-1] bg-[radial-gradient(circle_at_50%_50%,#1a1a2e_0%,#050505_100%)]" />
+        <ParticleBackground />
         {children}
       </body>
     </html>
