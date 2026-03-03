@@ -2,53 +2,67 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Sparkles, Code2, Rocket, Menu, X, ChevronRight, Wand2, Lightbulb, Activity, Linkedin } from "lucide-react";
+import { ExternalLink, Github, Sparkles, Code2, Rocket, Menu, X, ChevronRight, Wand2, Lightbulb, Activity, Linkedin, Star, GitFork } from "lucide-react";
 import Link from "next/link";
 
-const projects = [
+const featuredProjects = [
   {
     id: 1,
-    title: "Project Name 1",
-    description: "Brief 1-2 line description of the project, highlighting its main purpose and achievement.",
-    techStack: ["Tech 1", "Tech 2", "Tech 3"],
-    features: ["Feature 1", "Feature 2", "Feature 3"],
+    title: "Ride_Scanner",
+    description: "A Kotlin-based tool for scanning and analyzing ride data, forked from skrish-g.",
+    techStack: ["Kotlin"],
     liveDemo: "#",
-    github: "#",
-    keyFeature: "A standout feature that makes this project unique.",
+    github: "https://github.com/Tanishpanchal1/Ride_Scanner",
     icon: <Rocket className="w-5 h-5 text-red-100" />,
     gradient: "from-red-800 via-red-600 to-amber-500",
+    stars: 1,
   },
   {
     id: 2,
-    title: "Project Name 2",
-    description: "Brief 1-2 line description of the project, emphasizing its innovative approach and impact.",
-    techStack: ["Tech A", "Tech B", "Tech C"],
-    features: ["Core Functionality", "Unique Selling Point"],
+    title: "QuizVerseDeepMind",
+    description: "A modern, interactive quiz platform with real-time features and beautiful animations.",
+    techStack: ["JavaScript", "React", "Firebase"],
     liveDemo: "#",
-    github: "#",
-    keyFeature: "A critical feature that showcases the project's value.",
+    github: "https://github.com/Tanishpanchal1/QuizVerseDeepMind",
     icon: <Sparkles className="w-5 h-5 text-amber-100" />,
     gradient: "from-amber-600 via-red-500 to-red-700",
+    stars: 1,
+  },
+  {
+    id: 3,
+    title: "MyMagicWorld",
+    description: "An immersive web experience built with TypeScript.",
+    techStack: ["TypeScript"],
+    liveDemo: "#",
+    github: "https://github.com/Tanishpanchal1/MyMagicWorld",
+    icon: <Wand2 className="w-5 h-5 text-purple-100" />,
+    gradient: "from-purple-800 via-purple-600 to-indigo-500",
+    stars: 1,
+  },
+  {
+    id: 4,
+    title: "NeutraYield",
+    description: "An AI-driven, non-custodial execution engine for scanning markets and executing trades securely.",
+    techStack: ["Python", "LLM", "MetaMask"],
+    liveDemo: "#",
+    github: "https://github.com/Tanishpanchal1/NeutraYield",
+    icon: <Activity className="w-5 h-5 text-green-100" />,
+    gradient: "from-green-800 via-green-600 to-teal-500",
+    stars: 1,
   },
 ];
 
-const hackathonProjects = [
-  {
-    title: "Hackathon Project 1",
-    description: "A project developed during a hackathon, showcasing rapid development and creative problem-solving."
-  },
-  {
-    title: "Hackathon Project 2",
-    description: "An innovative solution created under pressure, demonstrating teamwork and technical skills."
-  }
+const otherProjects = [
+    {
+        id: 1,
+        title: "Daytona",
+        description: "A secure and elastic infrastructure for running AI-generated code.",
+        github: "https://github.com/daytonaio/daytona",
+        stars: 61672,
+        forks: 5076,
+        tech: "TypeScript",
+      }
 ];
-
-const projectHighlights = {
-  notableImpact: "A measurable achievement or impact of one of the projects.",
-  quickLearner: "An example of quickly learning a new technology or skill for a project.",
-};
-
-
 
 export default function ProjectsPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -56,10 +70,10 @@ export default function ProjectsPage() {
     { name: "Work", href: "/projects" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "#contact" },
-];
+  ];
 
   return (
-    <div className="min-h-screen bg-[#080000] text-white selection:bg-red-500/30 overflow-x-hidden">
+    <div className="min-h-screen bg-black text-white selection:bg-red-500/30 overflow-x-hidden">
       <nav className="fixed top-0 w-full z-50 backdrop-blur-xl border-b border-red-900/20 bg-black/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <motion.div 
@@ -125,30 +139,35 @@ export default function ProjectsPage() {
       </nav>
 
       <main className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pt-32 sm:pt-40">
-        <header className="mb-20 relative text-center md:text-left">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-red-500/30 bg-red-500/5 text-amber-500 text-[10px] font-black mb-6 tracking-[0.2em] uppercase">
-              <Wand2 className="w-3 h-3" />
-              My Creations
-            </div>
-            <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black mb-8 tracking-tighter leading-[0.9]">
-              Digital Alchemy
-            </h1>
-            <p className="text-gray-400 text-lg sm:text-xl max-w-2xl leading-relaxed mx-auto md:mx-0">
-              Here are some of the projects I've poured my passion into. Each one represents a unique challenge and a step forward in my journey as a developer.
-            </p>
-          </motion.div>
-          <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-red-900/20 rounded-full blur-[150px] -z-10 animate-pulse" />
-          <div className="absolute top-0 right-0 w-80 h-80 bg-amber-600/10 rounded-full blur-[120px] -z-10" />
+        <header className="mb-20 relative text-center">
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+            >
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-red-500/30 bg-red-500/5 text-amber-500 text-[10px] font-black mb-6 tracking-[0.2em] uppercase">
+                    <Wand2 className="w-3 h-3" />
+                    My Portfolio
+                </div>
+                <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black mb-8 tracking-tighter leading-none">
+                    Crafting Digital <br />
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-600 via-amber-400 to-red-600">
+                        Experiences
+                    </span>
+                </h1>
+                <p className="text-gray-400 text-lg sm:text-xl max-w-3xl leading-relaxed mx-auto">
+                    A collection of my work, from personal projects to professional endeavors. Each project reflects my dedication to quality, innovation, and creating impactful solutions.
+                </p>
+            </motion.div>
+            <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-red-900/20 rounded-full blur-[150px] -z-10 animate-pulse" />
+            <div className="absolute top-0 right-0 w-80 h-80 bg-amber-600/10 rounded-full blur-[120px] -z-10" />
         </header>
 
-        <section id="work" className="scroll-mt-32">
+
+        <section id="featured-work" className="scroll-mt-32">
+          <h2 class="text-4xl font-black tracking-tighter mb-12 text-center">Featured Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-            {projects.map((project, index) => (
+            {featuredProjects.map((project, index) => (
               <motion.div 
                 key={project.id}
                 initial={{ opacity: 0, y: 40 }}
@@ -169,16 +188,6 @@ export default function ProjectsPage() {
                   <p className="text-gray-400 mb-6 text-sm sm:text-base leading-relaxed flex-grow font-medium">
                     {project.description}
                   </p>
-                  <div className="mb-6">
-                    <h4 className="font-bold text-amber-400 text-xs uppercase tracking-wider mb-2">Key Feature</h4>
-                    <p className="text-gray-300 text-sm">{project.keyFeature}</p>
-                  </div>
-                  <div className="mb-6">
-                    <h4 className="font-bold text-amber-400 text-xs uppercase tracking-wider mb-2">Features</h4>
-                    <ul className="list-disc list-inside text-gray-300 text-sm space-y-1">
-                        {project.features.map(feature => <li key={feature}>{feature}</li>)}
-                    </ul>
-                  </div>
                   <div className="flex flex-wrap gap-2.5 mb-8">
                     {project.techStack.map((tag) => (
                       <span 
@@ -190,15 +199,12 @@ export default function ProjectsPage() {
                     ))}
                   </div>
                   <div className="flex items-center justify-between pt-6 border-t border-red-900/10">
-                    <a 
-                      href={project.liveDemo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-xs font-black text-white hover:text-amber-400 transition-colors uppercase tracking-widest"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      Live Demo
-                    </a>
+                    <div className="flex items-center gap-4 text-gray-400">
+                        <div className="flex items-center gap-1 text-xs font-bold">
+                            <Star className="w-4 h-4 text-amber-500" />
+                            <span>{project.stars}</span>
+                        </div>
+                    </div>
                     <a 
                       href={project.github}
                       target="_blank"
@@ -214,52 +220,47 @@ export default function ProjectsPage() {
           </div>
         </section>
 
-        <section id="additional-projects" className="mt-24">
-            <h2 className="text-4xl font-black tracking-tighter text-center mb-12">More Ventures</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <motion.div 
-                initial={{ opacity: 0, y: 40 }} 
-                whileInView={{ opacity: 1, y: 0 }} 
-                viewport={{ once: true }} 
-                transition={{ delay: 0.1 }}
-                className="bg-[#0F0000] border border-red-900/20 rounded-2xl p-8">
-                  <div className="flex items-center gap-4 mb-4">
-                    <Lightbulb className="w-6 h-6 text-amber-500" />
-                    <h3 className="text-xl font-bold text-amber-500">Hackathon Highlights</h3>
-                  </div>
-                  <div className="space-y-4">
-                    {hackathonProjects.map(p => (
-                        <div key={p.title}>
-                            <h4 className="font-semibold text-gray-200">{p.title}</h4>
-                            <p className="text-gray-400 text-sm">{p.description}</p>
+        <section id="other-projects" className="mt-24">
+            <h2 className="text-4xl font-black tracking-tighter text-center mb-12">Other Noteworthy Projects</h2>
+            <div className="space-y-4">
+            {otherProjects.map((project, index) => (
+                <motion.div 
+                    key={project.id}
+                    initial={{ opacity: 0, y: 40 }} 
+                    whileInView={{ opacity: 1, y: 0 }} 
+                    viewport={{ once: true }} 
+                    transition={{ delay: index * 0.1 }}
+                    className="bg-[#0F0000] border border-red-900/20 rounded-2xl p-6 flex items-center justify-between"
+                >
+                    <div>
+                        <h3 className="text-xl font-bold text-amber-500">{project.title}</h3>
+                        <p className="text-gray-400 text-sm mt-1">{project.description}</p>
+                        <div className="flex items-center gap-2 mt-2">
+                            <span className="text-xs bg-gray-800 px-2 py-1 rounded-md">{project.tech}</span>
                         </div>
-                    ))}
-                  </div>
-              </motion.div>
-              <motion.div 
-                initial={{ opacity: 0, y: 40 }} 
-                whileInView={{ opacity: 1, y: 0 }} 
-                viewport={{ once: true }} 
-                transition={{ delay: 0.2 }}
-                className="bg-[#0F0000] border border-red-900/20 rounded-2xl p-8">
-                  <div className="flex items-center gap-4 mb-4">
-                    <Activity className="w-6 h-6 text-amber-500" />
-                    <h3 className="text-xl font-bold text-amber-500">Project Spotlights</h3>
-                  </div>
-                  <div className="space-y-4">
-                    <div>
-                        <h4 className="font-semibold text-gray-200">Notable Impact</h4>
-                        <p className="text-gray-400 text-sm">{projectHighlights.notableImpact}</p>
                     </div>
-                    <div>
-                        <h4 className="font-semibold text-gray-200">Quick Learner</h4>
-                        <p className="text-gray-400 text-sm">{projectHighlights.quickLearner}</p>
+                    <div className="flex items-center gap-6 text-gray-400">
+                        <div className="flex items-center gap-1 font-bold">
+                            <Star className="w-5 h-5 text-amber-500" />
+                            <span>{project.stars.toLocaleString()}</span>
+                        </div>
+                        <div className="flex items-center gap-1 font-bold">
+                            <GitFork className="w-5 h-5" />
+                            <span>{project.forks.toLocaleString()}</span>
+                        </div>
+                        <a 
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2.5 rounded-xl hover:bg-red-900/20 transition-all text-gray-500 hover:text-amber-400"
+                        >
+                            <Github className="w-6 h-6" />
+                        </a>
                     </div>
-                  </div>
-              </motion.div>
+                </motion.div>
+            ))}
             </div>
         </section>
-
       </main>
 
       <footer id="contact" className="mt-40 py-20 border-t border-red-900/10 bg-black/40">
