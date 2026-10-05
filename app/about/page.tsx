@@ -15,15 +15,15 @@ const aboutSections = [
     content: [
       {
         subtitle: "Who I am",
-        text: "Creative Full Stack Developer At Little Apps, Inc.",
+        text: "AI & Software Engineering Student building production-oriented systems and full-stack products.",
       },
       {
         subtitle: "Academics",
-        text: "B.Tech, CSE, Indian Institute of Technology, Madras (IITM)",
+        text: "BS — Data Science and Applications, Indian Institute of Technology Madras (2024–2028)",
       },
       {
         subtitle: "My Journey",
-        text: "From a 1.5 lacs per-annum package to a 24 lacs per-annum package.",
+        text: "From learning the fundamentals of computer science to shipping AI systems used in real workflows.",
       },
     ],
   },
@@ -34,11 +34,11 @@ const aboutSections = [
     content: [
       {
         subtitle: "My Mantra",
-        text: "Code with passion.",
+        text: "Build with clarity, ship with ownership.",
       },
       {
         subtitle: "My approach",
-        text: "Agile Development, Responsive Design, User-Centric focus.",
+        text: "Keep the experience human while making the underlying system reliable, observable, and safe.",
       },
     ],
   },
@@ -49,11 +49,11 @@ const aboutSections = [
     content: [
       {
         subtitle: "Short term goal",
-        text: "Master DSA",
+        text: "Deepen AI systems and product engineering craft.",
       },
       {
         subtitle: "Long term vision",
-        text: "Build something revolutionary.",
+        text: "Build useful AI products that people can trust.",
       },
     ],
   },
@@ -64,11 +64,11 @@ const aboutSections = [
     content: [
         {
             subtitle: "Codeathons",
-            text: "100+ problems solved.",
+            text: "Production AI platform shipped end to end.",
         },
         {
             subtitle: "LeetCode",
-            text: "2-star rated.",
+            text: "198 leads engaged through the AllSet platform.",
         },
     ]
   },
@@ -123,8 +123,8 @@ export default function AboutPage() {
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-700 to-amber-600 flex items-center justify-center shadow-lg shadow-red-900/20">
                 <Code2 className="w-6 h-6 text-white" />
                 </div>
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-amber-200 to-red-400">
-                LEGACY
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-orange-200 to-fuchsia-400">
+                TANISH
                 </span>
             </Link>
           </motion.div>
@@ -190,7 +190,7 @@ export default function AboutPage() {
               Tanish Panchal
             </h1>
             <p className="text-gray-400 text-lg sm:text-xl max-w-3xl leading-relaxed mx-auto md:mx-0">
-                A passionate and creative Full Stack Developer based in India, currently working at Little Apps, Inc. I am a B.Tech CSE student at IIT Madras with a journey that reflects my dedication and growth in the tech industry.
+                AI and software engineering student based in Bangalore, India. I build conversational agents, voice interfaces, and full-stack systems that connect intelligent reasoning to real product workflows.
             </p>
           </motion.div>
         </header>

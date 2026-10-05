@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Github, Sparkles, Code2, Rocket, Layers, Menu, X, ChevronRight, Wand2 } from "lucide-react";
+import { ArrowUpRight, Github, Linkedin, Sparkles, Code2, Menu, X, ChevronRight, Mail, Phone } from "lucide-react";
 import Link from 'next/link';
 
 
@@ -29,8 +29,8 @@ export default function Home() {
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-700 to-amber-600 flex items-center justify-center shadow-lg shadow-red-900/20">
                 <Code2 className="w-6 h-6 text-white" />
               </div>
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-amber-200 to-red-400">
-                LEGACY
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-orange-200 to-fuchsia-400">
+                TANISH
               </span>
             </Link>
           </motion.div>
@@ -46,9 +46,7 @@ export default function Home() {
                 {link.name}
               </a>
             ))}
-            <button className="px-6 py-2.5 rounded-full bg-gradient-to-r from-red-700 to-amber-600 text-white hover:shadow-lg hover:shadow-red-600/20 transition-all font-bold text-xs tracking-widest uppercase">
-              Hire Me
-            </button>
+            <a href="mailto:ptanish990@gmail.com" className="px-6 py-2.5 rounded-full bg-white text-black hover:bg-orange-300 transition-all font-bold text-xs tracking-widest uppercase">Let&apos;s talk</a>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -96,17 +94,16 @@ export default function Home() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-red-500/30 bg-red-500/5 text-amber-500 text-[10px] font-black mb-6 tracking-[0.2em] uppercase">
               <Sparkles className="w-3 h-3" />
-              Master of the Digital Arts
+              AI &amp; Software Engineering Student
             </div>
             <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black mb-8 tracking-tighter leading-[0.9]">
-              The Archmage <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-600 via-amber-400 to-red-600 bg-[length:200%_auto] animate-gradient">
-                of Code.
+              I build AI systems <br />
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-300 via-fuchsia-400 to-cyan-300 bg-[length:200%_auto] animate-gradient">
+                that do real work.
               </span>
             </h1>
             <p className="text-gray-400 text-lg sm:text-xl max-w-2xl leading-relaxed mx-auto">
-              Weaving spells in TypeScript and conjuring ethereal interfaces.
-              Welcome to my sanctum of digital sorcery.
+              I&apos;m Tanish Panchal — a full-stack AI developer building production-oriented agents, voice interfaces, and software that connects reasoning with real-world actions.
             </p>
           </motion.div>
 
@@ -118,20 +115,22 @@ export default function Home() {
           >
             <Link href="/projects">
               <button className="group relative px-8 py-4 rounded-xl bg-gradient-to-r from-red-700 to-amber-600 text-white hover:shadow-lg hover:shadow-red-600/20 transition-all font-bold text-xs tracking-widest uppercase flex items-center gap-2">
-                <Wand2 className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-                View My Spells
+                <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                Explore my work
               </button>
             </Link>
 
             <Link href="/about">
               <button className="px-8 py-4 rounded-xl border border-red-900/20 hover:border-red-700 transition-all hover:bg-red-950/20 text-amber-500">
-                Read the Chronicles
+                About me
               </button>
             </Link>
           </motion.div>
 
         </header>
       </main>
+
+      <section id="contact" className="mx-auto max-w-7xl px-4 pb-24 sm:px-6 lg:px-8"><div className="grid gap-8 rounded-[2rem] border border-white/10 bg-white/[0.035] p-8 sm:p-12 md:grid-cols-2 md:items-end"><div><p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-orange-300">Currently open to building</p><h2 className="text-4xl font-black tracking-tight sm:text-5xl">Useful products with thoughtful AI.</h2></div><div className="space-y-4 text-white/60 md:justify-self-end"><a href="mailto:ptanish990@gmail.com" className="flex items-center gap-3 hover:text-orange-300"><Mail className="h-5 w-5" /> ptanish990@gmail.com</a><a href="tel:+919812720132" className="flex items-center gap-3 hover:text-orange-300"><Phone className="h-5 w-5" /> +91 98127 20132</a><div className="flex gap-4 pt-3"><a href="https://github.com/Tanishpanchal1" target="_blank" rel="noreferrer" aria-label="GitHub" className="hover:text-orange-300"><Github /></a><a href="https://www.linkedin.com/in/tanish-panchal-4a2553293/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:text-orange-300"><Linkedin /></a></div></div></div></section>
 
       <style jsx global>{`
         @keyframes gradient {
